@@ -3,7 +3,18 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
+	<div class="footer-content">
+		<div class="footer-text">
+			<p>&copy; {today.getFullYear()} GoDigital.pt. Todos os direitos reservados.</p>
+			<div class="footer-links">
+				<a href="/privacidade">Política de Privacidade</a>
+				<span>•</span>
+				<a href="/contacto">Contacto</a>
+				<span>•</span>
+				<a href="/blog">Blog</a>
+			</div>
+		</div>
+	</div>
 	<div class="social-links">
 		<a href="https://m.webtoo.ls/@astro" target="_blank">
 			<span class="sr-only">Follow Astro on Mastodon</span>
@@ -45,6 +56,38 @@ const today = new Date();
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
+	}
+	
+	.footer-content {
+		margin-bottom: 1.5rem;
+	}
+	
+	.footer-text p {
+		margin: 0 0 0.5rem 0;
+		font-size: 0.9rem;
+	}
+	
+	.footer-links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.85rem;
+	}
+	
+	.footer-links a {
+		color: rgb(var(--gray));
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+	
+	.footer-links a:hover {
+		color: #667eea;
+		text-decoration: underline;
+	}
+	
+	.footer-links span {
+		color: rgb(var(--gray-light));
 	}
 	.social-links {
 		display: flex;

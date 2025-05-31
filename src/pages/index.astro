@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Newsletter from '../components/Newsletter.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -206,12 +207,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
+			<Newsletter />
+
 			<section style="text-align: center; margin: 3rem 0;">
 				<h2 style="color: #334155; margin-bottom: 1rem;">Pronto para Começar?</h2>
 				<p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
 					Transforme a sua presença digital hoje mesmo. Entre em contacto connosco para uma consulta gratuita.
 				</p>
-				<a href="/contact" class="cta-button" style="background: #667eea; color: white;">Contactar Agora</a>
+				<a href="/contacto" class="cta-button" style="background: #667eea; color: white;">Contactar Agora</a>
 			</section>
 		</main>
 		<Footer />

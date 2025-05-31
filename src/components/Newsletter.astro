@@ -1,0 +1,159 @@
+---
+// Componente Newsletter para captar leads
+---
+
+<section class="newsletter">
+	<div class="newsletter-container">
+		<div class="newsletter-content">
+			<h2>📧 Newsletter GoDigital.pt</h2>
+			<p>
+				Receba <strong>tutoriais exclusivos</strong>, dicas de SEO e estratégias de marketing digital 
+				diretamente no seu email. <em>Sem spam, apenas conteúdo de valor!</em>
+			</p>
+			<div class="newsletter-benefits">
+				<span>✓ Tutoriais exclusivos</span>
+				<span>✓ Dicas semanais</span>
+				<span>✓ Recursos gratuitos</span>
+			</div>
+		</div>
+		
+		<form class="newsletter-form" action="#" method="POST" netlify netlify-honeypot="bot-field" onsubmit="trackNewsletterSignup()">
+			<input type="hidden" name="bot-field" />
+			<div class="form-group">
+				<input 
+					type="email" 
+					name="email" 
+					placeholder="O seu melhor email" 
+					required
+					class="email-input"
+				/>
+				<button type="submit" class="subscribe-btn">
+					Subscrever Grátis
+				</button>
+			</div>
+			<p class="privacy-note">
+				Respeitamos a sua privacidade. Pode cancelar a qualquer momento.
+			</p>
+		</form>
+	</div>
+</section>
+
+<style>
+	.newsletter {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		padding: 4rem 2rem;
+		margin: 4rem 0;
+		text-align: center;
+	}
+	
+	.newsletter-container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	
+	.newsletter h2 {
+		font-size: 2.2rem;
+		margin-bottom: 1rem;
+		font-weight: 700;
+	}
+	
+	.newsletter p {
+		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
+		opacity: 0.95;
+		line-height: 1.6;
+	}
+	
+	.newsletter-benefits {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin-bottom: 2rem;
+		flex-wrap: wrap;
+	}
+	
+	.newsletter-benefits span {
+		background: rgba(255, 255, 255, 0.15);
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+	
+	.newsletter-form {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	
+	.form-group {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.email-input {
+		flex: 1;
+		padding: 1rem 1.5rem;
+		border: none;
+		border-radius: 50px;
+		font-size: 1rem;
+		outline: none;
+		background: white;
+		color: #334155;
+	}
+	
+	.email-input::placeholder {
+		color: #94a3b8;
+	}
+	
+	.subscribe-btn {
+		background: #10b981;
+		color: white;
+		border: none;
+		padding: 1rem 2rem;
+		border-radius: 50px;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		white-space: nowrap;
+	}
+	
+	.subscribe-btn:hover {
+		background: #059669;
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+	}
+	
+	.privacy-note {
+		font-size: 0.85rem;
+		opacity: 0.8;
+		margin: 0;
+	}
+	
+	@media (max-width: 768px) {
+		.newsletter {
+			padding: 3rem 1rem;
+		}
+		
+		.newsletter h2 {
+			font-size: 1.8rem;
+		}
+		
+		.newsletter-benefits {
+			flex-direction: column;
+			gap: 1rem;
+		}
+		
+		.form-group {
+			flex-direction: column;
+		}
+		
+		.email-input,
+		.subscribe-btn {
+			width: 100%;
+			box-sizing: border-box;
+		}
+	}
+</style> 

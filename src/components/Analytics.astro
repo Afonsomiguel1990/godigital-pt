@@ -1,0 +1,114 @@
+---
+// Componente Analytics para GoDigital.pt
+// Google Analytics 4 com configuração GDPR
+interface Props {
+  gtag?: string;
+}
+
+const { gtag = 'G-XXXXXXXXXX' } = Astro.props;
+---
+
+<!-- Google Analytics 4 -->
+{gtag && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag}`}></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Configuração GDPR compliant
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted'
+      });
+      
+      gtag('js', new Date());
+      gtag('config', '${gtag}', {
+        // Configurações de privacidade
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        
+        // Configurações do site
+        'site_speed_sample_rate': 100,
+        'custom_map': {
+          'custom_parameter_1': 'content_group_1'
+        }
+      });
+      
+      // Eventos customizados úteis
+      gtag('event', 'page_view', {
+        'page_title': document.title,
+        'page_location': window.location.href,
+        'content_group_1': 'GoDigital.pt'
+      });
+      
+      // Newsletter signup tracking
+      window.trackNewsletterSignup = function() {
+        gtag('event', 'newsletter_signup', {
+          'event_category': 'engagement',
+          'event_label': 'header_newsletter'
+        });
+      };
+      
+      // Scroll tracking (25%, 50%, 75%, 100%)
+      let scrollTracked = [];
+      window.addEventListener('scroll', function() {
+        let scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        
+        [25, 50, 75, 100].forEach(milestone => {
+          if (scrollPercent >= milestone && !scrollTracked.includes(milestone)) {
+            scrollTracked.push(milestone);
+            gtag('event', 'scroll', {
+              'event_category': 'engagement',
+              'event_label': `${milestone}%`,
+              'value': milestone
+            });
+          }
+        });
+      });
+    </script>
+  </>
+)}
+
+<!-- Hotjar Tracking Code (opcional) -->
+<!-- 
+<script>
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+-->
+
+<style>
+  /* Estilo para bannners de cookies (se necessário) */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #334155;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    z-index: 9999;
+  }
+  
+  .cookie-banner button {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+</style> 

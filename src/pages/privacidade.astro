@@ -1,0 +1,283 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="pt">
+	<head>
+		<BaseHead 
+			title="Política de Privacidade" 
+			description="Política de Privacidade da GoDigital.pt. Saiba como protegemos e tratamos os seus dados pessoais de acordo com o RGPD."
+			keywords="política de privacidade, RGPD, proteção de dados, GoDigital.pt"
+		/>
+		<style>
+			.privacy-container {
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 2rem;
+				line-height: 1.7;
+			}
+			
+			.privacy-header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			
+			.privacy-header h1 {
+				color: #334155;
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+			}
+			
+			.last-updated {
+				color: #64748b;
+				font-style: italic;
+			}
+			
+			.privacy-section {
+				margin-bottom: 2.5rem;
+			}
+			
+			.privacy-section h2 {
+				color: #667eea;
+				border-bottom: 2px solid #e2e8f0;
+				padding-bottom: 0.5rem;
+				margin-bottom: 1.5rem;
+			}
+			
+			.privacy-section h3 {
+				color: #475569;
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+			}
+			
+			.privacy-section p {
+				color: #64748b;
+				margin-bottom: 1rem;
+			}
+			
+			.privacy-section ul, .privacy-section ol {
+				color: #64748b;
+				margin-left: 1.5rem;
+				margin-bottom: 1rem;
+			}
+			
+			.privacy-section li {
+				margin-bottom: 0.5rem;
+			}
+			
+			.contact-info {
+				background: #f8fafc;
+				padding: 1.5rem;
+				border-radius: 8px;
+				border-left: 4px solid #667eea;
+			}
+			
+			.highlight {
+				background: #fef3c7;
+				padding: 0.2rem 0.4rem;
+				border-radius: 4px;
+			}
+			
+			@media (max-width: 768px) {
+				.privacy-container {
+					padding: 1rem;
+				}
+				
+				.privacy-header h1 {
+					font-size: 2rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main class="privacy-container">
+			<div class="privacy-header">
+				<h1>Política de Privacidade</h1>
+				<p class="last-updated">Última atualização: 1 de Janeiro de 2024</p>
+			</div>
+
+			<div class="privacy-section">
+				<h2>1. Quem Somos</h2>
+				<p>
+					A <strong>GoDigital.pt</strong> é uma empresa especializada em serviços digitais, 
+					desenvolvimento web, SEO e marketing digital. O nosso compromisso é oferecer 
+					serviços de qualidade enquanto protegemos rigorosamente a privacidade dos nossos utilizadores.
+				</p>
+				<div class="contact-info">
+					<h3>Dados de Contacto do Responsável pelo Tratamento:</h3>
+					<p><strong>Empresa:</strong> GoDigital.pt</p>
+					<p><strong>Email:</strong> privacidade@godigital.pt</p>
+					<p><strong>Website:</strong> https://godigital.pt</p>
+				</div>
+			</div>
+
+			<div class="privacy-section">
+				<h2>2. Dados Pessoais que Recolhemos</h2>
+				<p>Recolhemos apenas os dados estritamente necessários para prestar os nossos serviços:</p>
+				
+				<h3>2.1 Dados fornecidos voluntariamente:</h3>
+				<ul>
+					<li><strong>Newsletter:</strong> Endereço de email</li>
+					<li><strong>Formulário de contacto:</strong> Nome, email e mensagem</li>
+					<li><strong>Comentários no blog:</strong> Nome, email (opcional) e comentário</li>
+				</ul>
+				
+				<h3>2.2 Dados recolhidos automaticamente:</h3>
+				<ul>
+					<li><strong>Analytics:</strong> Endereço IP (anonimizado), tipo de browser, páginas visitadas</li>
+					<li><strong>Cookies técnicos:</strong> Preferências do site, sessão do utilizador</li>
+					<li><strong>Logs do servidor:</strong> Dados técnicos para manutenção e segurança</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>3. Como Utilizamos os Seus Dados</h2>
+				<p>Os seus dados pessoais são utilizados exclusivamente para:</p>
+				<ol>
+					<li><strong>Newsletter:</strong> Envio de conteúdos educativos e atualizações do blog</li>
+					<li><strong>Comunicação:</strong> Resposta às suas questões e pedidos de informação</li>
+					<li><strong>Melhoramento do serviço:</strong> Análise estatística do comportamento dos utilizadores</li>
+					<li><strong>Segurança:</strong> Proteção contra spam, fraude e ataques informáticos</li>
+					<li><strong>Cumprimento legal:</strong> Quando exigido por lei ou autoridades competentes</li>
+				</ol>
+			</div>
+
+			<div class="privacy-section">
+				<h2>4. Base Legal para o Tratamento</h2>
+				<p>O tratamento dos seus dados pessoais baseia-se em:</p>
+				<ul>
+					<li><strong>Consentimento:</strong> Para newsletter e cookies não essenciais</li>
+					<li><strong>Interesse legítimo:</strong> Para analytics, segurança e melhoramento do serviço</li>
+					<li><strong>Execução de contrato:</strong> Para prestação de serviços solicitados</li>
+					<li><strong>Cumprimento de obrigação legal:</strong> Quando exigido por lei</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>5. Partilha de Dados</h2>
+				<p>
+					<span class="highlight">Não vendemos, alugamos ou partilhamos os seus dados pessoais com terceiros</span> 
+					para fins comerciais. Os dados podem ser partilhados apenas nos seguintes casos:
+				</p>
+				<ul>
+					<li><strong>Prestadores de serviços:</strong> Google Analytics (dados anonimizados), Netlify (hosting)</li>
+					<li><strong>Cumprimento legal:</strong> Quando exigido por autoridades competentes</li>
+					<li><strong>Proteção de direitos:</strong> Para proteger os nossos direitos legais ou de terceiros</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>6. Período de Conservação</h2>
+				<p>Conservamos os seus dados pessoais pelo tempo necessário para cumprir as finalidades descritas:</p>
+				<ul>
+					<li><strong>Newsletter:</strong> Até cancelar a subscrição</li>
+					<li><strong>Contactos:</strong> 3 anos após o último contacto</li>
+					<li><strong>Analytics:</strong> 26 meses (configuração do Google Analytics)</li>
+					<li><strong>Logs do servidor:</strong> 12 meses</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>7. Os Seus Direitos (RGPD)</h2>
+				<p>Tem os seguintes direitos relativamente aos seus dados pessoais:</p>
+				<ul>
+					<li><strong>Acesso:</strong> Saber que dados temos sobre si</li>
+					<li><strong>Retificação:</strong> Corrigir dados incorretos ou incompletos</li>
+					<li><strong>Apagamento:</strong> Solicitar a eliminação dos seus dados</li>
+					<li><strong>Limitação:</strong> Restringir o tratamento dos seus dados</li>
+					<li><strong>Portabilidade:</strong> Receber os seus dados em formato estruturado</li>
+					<li><strong>Oposição:</strong> Opor-se ao tratamento baseado em interesse legítimo</li>
+					<li><strong>Retirada do consentimento:</strong> Cancelar o consentimento a qualquer momento</li>
+				</ul>
+				<p>
+					Para exercer qualquer destes direitos, contacte-nos através de 
+					<strong>privacidade@godigital.pt</strong>. Responderemos no prazo de 30 dias.
+				</p>
+			</div>
+
+			<div class="privacy-section">
+				<h2>8. Cookies e Tecnologias Similares</h2>
+				<p>Utilizamos cookies para melhorar a sua experiência no nosso website:</p>
+				
+				<h3>8.1 Cookies Essenciais:</h3>
+				<ul>
+					<li>Funcionamento básico do website</li>
+					<li>Preferências de utilizador</li>
+					<li>Segurança e prevenção de fraude</li>
+				</ul>
+				
+				<h3>8.2 Cookies de Analytics:</h3>
+				<ul>
+					<li>Google Analytics (com IP anonimizado)</li>
+					<li>Estatísticas de visitantes</li>
+					<li>Melhoramento do desempenho do site</li>
+				</ul>
+				
+				<p>
+					Pode gerir as suas preferências de cookies nas configurações do seu browser 
+					ou contactar-nos para mais informações.
+				</p>
+			</div>
+
+			<div class="privacy-section">
+				<h2>9. Segurança dos Dados</h2>
+				<p>Implementamos medidas técnicas e organizacionais adequadas para proteger os seus dados:</p>
+				<ul>
+					<li><strong>Encriptação:</strong> HTTPS em todo o website</li>
+					<li><strong>Acesso restrito:</strong> Apenas pessoal autorizado acede aos dados</li>
+					<li><strong>Backup seguro:</strong> Cópias de segurança regulares e encriptadas</li>
+					<li><strong>Monitorização:</strong> Deteção proativa de ameaças de segurança</li>
+					<li><strong>Formação:</strong> Equipa treinada em proteção de dados</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>10. Transferências Internacionais</h2>
+				<p>
+					Alguns dos nossos prestadores de serviços (Google, Netlify) podem processar dados 
+					fora do Espaço Económico Europeu. Estas transferências são realizadas com base em:
+				</p>
+				<ul>
+					<li>Decisões de adequação da Comissão Europeia</li>
+					<li>Cláusulas contratuais tipo aprovadas pela UE</li>
+					<li>Certificações de conformidade (Privacy Shield sucessor)</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>11. Alterações à Política de Privacidade</h2>
+				<p>
+					Esta política pode ser atualizada periodicamente para refletir alterações nos nossos 
+					serviços ou requisitos legais. Notificaremos sobre alterações significativas através:
+				</p>
+				<ul>
+					<li>Aviso destacado no website</li>
+					<li>Email aos subscritores da newsletter</li>
+					<li>Atualização da data no topo desta página</li>
+				</ul>
+			</div>
+
+			<div class="privacy-section">
+				<h2>12. Contacto e Reclamações</h2>
+				<div class="contact-info">
+					<p><strong>Para questões sobre privacidade:</strong></p>
+					<p>Email: <a href="mailto:privacidade@godigital.pt">privacidade@godigital.pt</a></p>
+					<p>Resposta garantida em 5 dias úteis</p>
+					
+					<p><strong>Autoridade de Controlo:</strong></p>
+					<p>
+						Tem o direito de apresentar reclamação à Comissão Nacional de Proteção de Dados (CNPD) 
+						se considerar que o tratamento dos seus dados viola o RGPD.
+					</p>
+					<p>Website: <a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a></p>
+				</div>
+			</div>
+
+		</main>
+		<Footer />
+	</body>
+</html> 
