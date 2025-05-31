@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://afonsomiguel1990.github.io/godigital-pt/sitemap-index.xml
+
+# Disallow admin/development files
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+
+# Allow important pages
+Allow: /blog/
+Allow: /servicos/
+Allow: /sobre/
+Allow: /contacto/
+
+# Crawl-delay for better server performance
+Crawl-delay: 1 
