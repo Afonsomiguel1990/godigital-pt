@@ -1,0 +1,219 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="pt">
+	<head>
+		<BaseHead title="Início" description={SITE_DESCRIPTION} />
+		<style>
+			.hero {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 4rem 2rem;
+				text-align: center;
+				margin: -2rem -2rem 3rem -2rem;
+			}
+			.hero h1 {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+			.hero p {
+				font-size: 1.25rem;
+				max-width: 600px;
+				margin: 0 auto 2rem;
+				opacity: 0.9;
+			}
+			.cta-button {
+				background: #fff;
+				color: #667eea;
+				padding: 1rem 2rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				display: inline-block;
+				transition: transform 0.2s;
+			}
+			.cta-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+			}
+			.services {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin: 3rem 0;
+			}
+			.service-card {
+				background: #f8fafc;
+				padding: 2rem;
+				border-radius: 12px;
+				border: 1px solid #e2e8f0;
+				transition: transform 0.2s, box-shadow 0.2s;
+			}
+			.service-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+			}
+			.service-card h3 {
+				color: #667eea;
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+			}
+			.service-card p {
+				color: #64748b;
+				line-height: 1.6;
+			}
+			.features {
+				background: #f1f5f9;
+				padding: 3rem 2rem;
+				margin: 3rem -2rem;
+				text-align: center;
+			}
+			.features h2 {
+				color: #334155;
+				margin-bottom: 2rem;
+				font-size: 2.5rem;
+			}
+			.feature-list {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+				max-width: 1000px;
+				margin: 0 auto;
+			}
+			.feature-item {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 8px;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+			}
+			.feature-item h4 {
+				color: #667eea;
+				margin-bottom: 0.5rem;
+			}
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 2rem;
+				}
+				.hero p {
+					font-size: 1.1rem;
+				}
+				.services {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<h1>Transforme o Seu Negócio Digital</h1>
+				<p>
+					Oferecemos serviços digitais profissionais e tutoriais especializados para 
+					impulsionar o seu sucesso online. Da criação de websites à otimização SEO.
+				</p>
+				<a href="/blog" class="cta-button">Ver Tutoriais</a>
+			</section>
+
+			<section class="services">
+				<div class="service-card">
+					<h3>🚀 Desenvolvimento Web</h3>
+					<p>
+						Criamos websites modernos, rápidos e otimizados para SEO. 
+						Utilizamos as tecnologias mais recentes como Astro, React e TypeScript 
+						para garantir a melhor performance.
+					</p>
+				</div>
+
+				<div class="service-card">
+					<h3>🔍 Otimização SEO</h3>
+					<p>
+						Aumentamos a visibilidade do seu website nos motores de busca. 
+						Análise técnica, otimização de conteúdo e estratégias comprovadas 
+						para melhorar o seu ranking.
+					</p>
+				</div>
+
+				<div class="service-card">
+					<h3>📈 Marketing Digital</h3>
+					<p>
+						Estratégias digitais personalizadas para fazer crescer o seu negócio. 
+						Desde redes sociais até campanhas de Google Ads, ajudamos a alcançar 
+						os seus objetivos.
+					</p>
+				</div>
+
+				<div class="service-card">
+					<h3>🎓 Tutoriais & Formação</h3>
+					<p>
+						Aprenda as competências digitais essenciais com os nossos tutoriais 
+						detalhados. Desde HTML/CSS até estratégias avançadas de marketing digital.
+					</p>
+				</div>
+
+				<div class="service-card">
+					<h3>⚡ Performance Web</h3>
+					<p>
+						Otimizamos a velocidade e performance do seu website. 
+						Core Web Vitals, otimização de imagens e técnicas avançadas 
+						para uma experiência de utilizador superior.
+					</p>
+				</div>
+
+				<div class="service-card">
+					<h3>🛠️ Consultoria Técnica</h3>
+					<p>
+						Consultoria especializada em tecnologia e estratégia digital. 
+						Ajudamos a escolher as melhores soluções técnicas para o seu projeto 
+						e objetivos de negócio.
+					</p>
+				</div>
+			</section>
+
+			<section class="features">
+				<h2>Porquê Escolher a GoDigital.pt?</h2>
+				<div class="feature-list">
+					<div class="feature-item">
+						<h4>✅ Experiência Comprovada</h4>
+						<p>Anos de experiência em desenvolvimento e marketing digital</p>
+					</div>
+					<div class="feature-item">
+						<h4>🎯 Foco em Resultados</h4>
+						<p>Estratégias orientadas para gerar resultados mensuráveis</p>
+					</div>
+					<div class="feature-item">
+						<h4>🔧 Tecnologia Moderna</h4>
+						<p>Utilizamos as ferramentas e frameworks mais atuais</p>
+					</div>
+					<div class="feature-item">
+						<h4>📚 Conhecimento Partilhado</h4>
+						<p>Tutoriais e guias gratuitos para a comunidade</p>
+					</div>
+					<div class="feature-item">
+						<h4>🇵🇹 Suporte em Português</h4>
+						<p>Atendimento completo em português para clientes nacionais</p>
+					</div>
+					<div class="feature-item">
+						<h4>💡 Inovação Constante</h4>
+						<p>Sempre atualizados com as últimas tendências digitais</p>
+					</div>
+				</div>
+			</section>
+
+			<section style="text-align: center; margin: 3rem 0;">
+				<h2 style="color: #334155; margin-bottom: 1rem;">Pronto para Começar?</h2>
+				<p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem;">
+					Transforme a sua presença digital hoje mesmo. Entre em contacto connosco para uma consulta gratuita.
+				</p>
+				<a href="/contact" class="cta-button" style="background: #667eea; color: white;">Contactar Agora</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

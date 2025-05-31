@@ -1,0 +1,107 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_AUTHOR, SITE_KEYWORDS } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+	keywords?: string;
+	articleSchema?: boolean;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { 
+	title, 
+	description, 
+	image = '/blog-placeholder-1.jpg',
+	keywords = SITE_KEYWORDS,
+	articleSchema = false 
+} = Astro.props;
+
+// Garantir que o título inclui o nome do site
+const fullTitle = title.includes('GoDigital.pt') ? title : `${title} - GoDigital.pt`;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="pt-PT" />
+<meta name="author" content={SITE_AUTHOR} />
+<meta name="keywords" content={keywords} />
+<meta name="theme-color" content="#2563eb" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={SITE_TITLE}
+	href={new URL('rss.xml', Astro.site)}
+/>
+<meta name="generator" content={Astro.generator} />
+
+<!-- Font preloads -->
+<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={articleSchema ? "article" : "website"} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:site_name" content="GoDigital.pt" />
+<meta property="og:locale" content="pt_PT" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:creator" content="@godigitalpt" />
+
+<!-- Additional SEO Meta Tags -->
+<meta name="revisit-after" content="7 days" />
+<meta name="rating" content="general" />
+<meta name="distribution" content="global" />
+
+{articleSchema && (
+	<script type="application/ld+json">
+		{JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": title,
+			"description": description,
+			"image": new URL(image, Astro.url),
+			"author": {
+				"@type": "Organization",
+				"name": SITE_AUTHOR,
+				"url": SITE_URL
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": SITE_AUTHOR,
+				"url": SITE_URL
+			},
+			"url": canonicalURL,
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": canonicalURL
+			}
+		})}
+	</script>
+)}
