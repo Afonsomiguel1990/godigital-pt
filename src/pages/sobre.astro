@@ -1,0 +1,217 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="pt">
+	<head>
+		<BaseHead 
+			title="Sobre Nós" 
+			description="Conheça a GoDigital.pt - especialistas em serviços digitais, desenvolvimento web e marketing digital em Portugal. A nossa missão é transformar negócios através da tecnologia."
+			keywords="sobre godigital, empresa digital portugal, especialistas web, marketing digital"
+		/>
+		<style>
+			.hero-about {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 3rem 2rem;
+				text-align: center;
+				margin: -2rem -2rem 3rem -2rem;
+			}
+			.hero-about h1 {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+			.hero-about p {
+				font-size: 1.2rem;
+				max-width: 600px;
+				margin: 0 auto;
+				opacity: 0.9;
+			}
+			.content {
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+			.section {
+				margin-bottom: 3rem;
+			}
+			.section h2 {
+				color: #334155;
+				font-size: 2rem;
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
+			.section p {
+				color: #64748b;
+				line-height: 1.8;
+				font-size: 1.1rem;
+				margin-bottom: 1.5rem;
+			}
+			.values {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin: 2rem 0;
+			}
+			.value-card {
+				background: #f8fafc;
+				padding: 2rem;
+				border-radius: 12px;
+				text-align: center;
+				border: 1px solid #e2e8f0;
+			}
+			.value-card h3 {
+				color: #667eea;
+				margin-bottom: 1rem;
+				font-size: 1.3rem;
+			}
+			.value-card p {
+				color: #64748b;
+				margin: 0;
+			}
+			.stats {
+				background: #f1f5f9;
+				padding: 3rem 2rem;
+				margin: 3rem -2rem;
+				text-align: center;
+			}
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			.stat-item {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+			}
+			.stat-number {
+				font-size: 2.5rem;
+				font-weight: bold;
+				color: #667eea;
+				display: block;
+			}
+			.stat-label {
+				color: #64748b;
+				font-size: 0.9rem;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+			@media (max-width: 768px) {
+				.hero-about h1 {
+					font-size: 2rem;
+				}
+				.content {
+					padding: 0 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero-about">
+				<h1>Sobre a GoDigital.pt</h1>
+				<p>
+					Especialistas em transformação digital, ajudando negócios portugueses 
+					a prosperarem no mundo online através de soluções tecnológicas inovadoras.
+				</p>
+			</section>
+
+			<div class="content">
+				<section class="section">
+					<h2>A Nossa Missão</h2>
+					<p>
+						Na GoDigital.pt, acreditamos que cada negócio merece ter uma presença digital de excelência. 
+						A nossa missão é democratizar o acesso a serviços digitais de qualidade, oferecendo soluções 
+						personalizadas que impulsionam o crescimento e sucesso dos nossos clientes.
+					</p>
+					<p>
+						Combinamos expertise técnica com uma abordagem centrada no cliente, garantindo que cada projeto 
+						não só atende às necessidades atuais, mas também prepara o negócio para os desafios futuros 
+						do mercado digital.
+					</p>
+				</section>
+
+				<section class="section">
+					<h2>Os Nossos Valores</h2>
+					<div class="values">
+						<div class="value-card">
+							<h3>🎯 Excelência</h3>
+							<p>Comprometemo-nos com a qualidade máxima em cada projeto, utilizando as melhores práticas e tecnologias mais recentes.</p>
+						</div>
+						<div class="value-card">
+							<h3>🤝 Transparência</h3>
+							<p>Comunicação clara e honesta em todas as fases do projeto, sem surpresas ou custos ocultos.</p>
+						</div>
+						<div class="value-card">
+							<h3>🚀 Inovação</h3>
+							<p>Sempre na vanguarda das tendências digitais, oferecendo soluções criativas e eficazes.</p>
+						</div>
+						<div class="value-card">
+							<h3>📚 Educação</h3>
+							<p>Partilhamos conhecimento através de tutoriais e formação, capacitando a comunidade digital.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="section">
+					<h2>Experiência & Especialização</h2>
+					<p>
+						Com anos de experiência no mercado digital português, especializamo-nos em desenvolvimento web moderno, 
+						otimização SEO, marketing digital e consultoria estratégica. A nossa equipa domina tecnologias como 
+						Astro, React, Next.js, TypeScript e as melhores ferramentas de marketing digital.
+					</p>
+					<p>
+						Trabalhamos com clientes de diversos setores - desde startups inovadoras a empresas estabelecidas - 
+						sempre com o objetivo de maximizar o retorno do investimento digital e criar experiências excepcionais 
+						para os utilizadores finais.
+					</p>
+				</section>
+			</div>
+
+			<section class="stats">
+				<h2 style="color: #334155; margin-bottom: 2rem;">Resultados que Falam por Si</h2>
+				<div class="stats-grid">
+					<div class="stat-item">
+						<span class="stat-number">50+</span>
+						<span class="stat-label">Projetos Concluídos</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">100%</span>
+						<span class="stat-label">Clientes Satisfeitos</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">5+</span>
+						<span class="stat-label">Anos de Experiência</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">24/7</span>
+						<span class="stat-label">Suporte Disponível</span>
+					</div>
+				</div>
+			</section>
+
+			<div class="content">
+				<section class="section" style="text-align: center;">
+					<h2>Vamos Trabalhar Juntos?</h2>
+					<p>
+						Pronto para transformar a sua presença digital? Entre em contacto connosco para uma 
+						consulta gratuita e descubra como podemos ajudar o seu negócio a crescer online.
+					</p>
+					<a href="/contacto" style="background: #667eea; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem;">
+						Contactar Agora
+					</a>
+				</section>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html> 

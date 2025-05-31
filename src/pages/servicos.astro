@@ -1,0 +1,345 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="pt">
+	<head>
+		<BaseHead 
+			title="Serviços Digitais" 
+			description="Serviços profissionais de desenvolvimento web, SEO, marketing digital e consultoria. Transforme o seu negócio com soluções digitais personalizadas da GoDigital.pt."
+			keywords="desenvolvimento web, seo portugal, marketing digital, consultoria digital, websites profissionais"
+		/>
+		<style>
+			.hero-services {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 3rem 2rem;
+				text-align: center;
+				margin: -2rem -2rem 3rem -2rem;
+			}
+			.hero-services h1 {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+			.hero-services p {
+				font-size: 1.2rem;
+				max-width: 600px;
+				margin: 0 auto;
+				opacity: 0.9;
+			}
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+				margin: 3rem 0;
+			}
+			.service-detailed {
+				background: white;
+				border-radius: 16px;
+				padding: 2.5rem;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+				border: 1px solid #e2e8f0;
+				transition: transform 0.3s, box-shadow 0.3s;
+			}
+			.service-detailed:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+			}
+			.service-icon {
+				font-size: 3rem;
+				margin-bottom: 1.5rem;
+			}
+			.service-detailed h2 {
+				color: #334155;
+				font-size: 1.8rem;
+				margin-bottom: 1rem;
+			}
+			.service-detailed p {
+				color: #64748b;
+				line-height: 1.7;
+				margin-bottom: 1.5rem;
+			}
+			.service-features {
+				list-style: none;
+				padding: 0;
+				margin: 1.5rem 0;
+			}
+			.service-features li {
+				color: #64748b;
+				margin-bottom: 0.8rem;
+				padding-left: 1.5rem;
+				position: relative;
+			}
+			.service-features li::before {
+				content: "✓";
+				color: #10b981;
+				font-weight: bold;
+				position: absolute;
+				left: 0;
+			}
+			.service-price {
+				background: #f1f5f9;
+				padding: 1rem;
+				border-radius: 8px;
+				text-align: center;
+				margin: 1.5rem 0;
+			}
+			.price-text {
+				color: #667eea;
+				font-size: 1.1rem;
+				font-weight: 600;
+			}
+			.cta-button {
+				background: #667eea;
+				color: white;
+				padding: 1rem 2rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				display: inline-block;
+				transition: background 0.2s;
+				width: 100%;
+				text-align: center;
+				box-sizing: border-box;
+			}
+			.cta-button:hover {
+				background: #5a67d8;
+			}
+			.process-section {
+				background: #f8fafc;
+				padding: 4rem 2rem;
+				margin: 4rem -2rem;
+				text-align: center;
+			}
+			.process-steps {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				max-width: 1000px;
+				margin: 2rem auto 0;
+			}
+			.process-step {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+			}
+			.step-number {
+				background: #667eea;
+				color: white;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				margin: 0 auto 1rem;
+			}
+			@media (max-width: 768px) {
+				.hero-services h1 {
+					font-size: 2rem;
+				}
+				.services-grid {
+					grid-template-columns: 1fr;
+				}
+				.service-detailed {
+					padding: 2rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero-services">
+				<h1>Serviços Digitais Profissionais</h1>
+				<p>
+					Soluções completas para transformar a sua presença digital e acelerar 
+					o crescimento do seu negócio online.
+				</p>
+			</section>
+
+			<div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+				<div class="services-grid">
+					<!-- Desenvolvimento Web -->
+					<div class="service-detailed">
+						<div class="service-icon">🚀</div>
+						<h2>Desenvolvimento Web</h2>
+						<p>
+							Criamos websites modernos, rápidos e otimizados para SEO utilizando as tecnologias 
+							mais avançadas do mercado.
+						</p>
+						<ul class="service-features">
+							<li>Design responsivo para todos os dispositivos</li>
+							<li>Tecnologias modernas (Astro, React, TypeScript)</li>
+							<li>Otimização de performance e Core Web Vitals</li>
+							<li>Integração com CMS e bases de dados</li>
+							<li>E-commerce e sistemas de pagamento</li>
+							<li>Manutenção e suporte técnico</li>
+						</ul>
+						<div class="service-price">
+							<div class="price-text">A partir de €1.500</div>
+						</div>
+						<a href="/contacto" class="cta-button">Solicitar Orçamento</a>
+					</div>
+
+					<!-- SEO & Otimização -->
+					<div class="service-detailed">
+						<div class="service-icon">🔍</div>
+						<h2>SEO & Otimização</h2>
+						<p>
+							Aumentamos a visibilidade do seu website nos motores de busca através de 
+							estratégias comprovadas de SEO.
+						</p>
+						<ul class="service-features">
+							<li>Auditoria técnica completa do website</li>
+							<li>Pesquisa e otimização de palavras-chave</li>
+							<li>Otimização on-page e técnica</li>
+							<li>Link building e SEO off-page</li>
+							<li>Relatórios mensais de performance</li>
+							<li>Monitorização de rankings</li>
+						</ul>
+						<div class="service-price">
+							<div class="price-text">A partir de €500/mês</div>
+						</div>
+						<a href="/contacto" class="cta-button">Começar Agora</a>
+					</div>
+
+					<!-- Marketing Digital -->
+					<div class="service-detailed">
+						<div class="service-icon">📈</div>
+						<h2>Marketing Digital</h2>
+						<p>
+							Estratégias integradas de marketing digital para aumentar a sua presença 
+							online e gerar mais leads qualificados.
+						</p>
+						<ul class="service-features">
+							<li>Gestão de redes sociais</li>
+							<li>Campanhas Google Ads e Facebook Ads</li>
+							<li>Email marketing e automação</li>
+							<li>Content marketing e copywriting</li>
+							<li>Analytics e relatórios de ROI</li>
+							<li>Estratégia de conversão</li>
+						</ul>
+						<div class="service-price">
+							<div class="price-text">A partir de €800/mês</div>
+						</div>
+						<a href="/contacto" class="cta-button">Criar Estratégia</a>
+					</div>
+
+					<!-- Consultoria Digital -->
+					<div class="service-detailed">
+						<div class="service-icon">🛠️</div>
+						<h2>Consultoria Digital</h2>
+						<p>
+							Orientação estratégica personalizada para otimizar a sua transformação 
+							digital e tecnológica.
+						</p>
+						<ul class="service-features">
+							<li>Auditoria de presença digital</li>
+							<li>Estratégia de transformação digital</li>
+							<li>Escolha de tecnologias e ferramentas</li>
+							<li>Formação da equipa interna</li>
+							<li>Implementação de processos digitais</li>
+							<li>Acompanhamento e suporte contínuo</li>
+						</ul>
+						<div class="service-price">
+							<div class="price-text">€150/hora</div>
+						</div>
+						<a href="/contacto" class="cta-button">Agendar Consulta</a>
+					</div>
+
+					<!-- E-commerce -->
+					<div class="service-detailed">
+						<div class="service-icon">🛒</div>
+						<h2>Lojas Online</h2>
+						<p>
+							Desenvolvimento de lojas online completas e otimizadas para maximizar 
+							as suas vendas digitais.
+						</p>
+						<ul class="service-features">
+							<li>Plataformas e-commerce personalizadas</li>
+							<li>Integração com sistemas de pagamento</li>
+							<li>Gestão de inventário e produtos</li>
+							<li>Otimização para conversão</li>
+							<li>Integração com ERP e CRM</li>
+							<li>Análise de performance de vendas</li>
+						</ul>
+						<div class="service-price">
+							<div class="price-text">A partir de €2.500</div>
+						</div>
+						<a href="/contacto" class="cta-button">Criar Loja Online</a>
+					</div>
+
+					<!-- Manutenção -->
+					<div class="service-detailed">
+						<div class="service-icon">⚙️</div>
+						<h2>Manutenção & Suporte</h2>
+						<p>
+							Mantenha o seu website sempre atualizado, seguro e funcionando 
+							na máxima performance.
+						</p>
+						<ul class="service-features">
+							<li>Backups automáticos diários</li>
+							<li>Atualizações de segurança</li>
+							<li>Monitorização 24/7</li>
+							<li>Otimização contínua de performance</li>
+							<li>Suporte técnico prioritário</li>
+							<li>Relatórios mensais detalhados</li>
+						</ul>
+						<div class="service-price">
+							<div class="price-text">A partir de €150/mês</div>
+						</div>
+						<a href="/contacto" class="cta-button">Proteger Website</a>
+					</div>
+				</div>
+			</div>
+
+			<section class="process-section">
+				<h2 style="color: #334155; font-size: 2.5rem; margin-bottom: 1rem;">Como Trabalhamos</h2>
+				<p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+					Um processo transparente e eficiente, desenhado para garantir os melhores resultados
+				</p>
+				<div class="process-steps">
+					<div class="process-step">
+						<div class="step-number">1</div>
+						<h3 style="color: #334155; margin-bottom: 1rem;">Consulta Inicial</h3>
+						<p style="color: #64748b; margin: 0;">Analisamos as suas necessidades e objetivos para criar uma estratégia personalizada.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">2</div>
+						<h3 style="color: #334155; margin-bottom: 1rem;">Proposta & Planeamento</h3>
+						<p style="color: #64748b; margin: 0;">Apresentamos uma proposta detalhada com cronograma e investimento necessário.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">3</div>
+						<h3 style="color: #334155; margin-bottom: 1rem;">Desenvolvimento</h3>
+						<p style="color: #64748b; margin: 0;">Executamos o projeto com atualizações regulares e comunicação transparente.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">4</div>
+						<h3 style="color: #334155; margin-bottom: 1rem;">Lançamento & Suporte</h3>
+						<p style="color: #64748b; margin: 0;">Lançamos o projeto e oferecemos suporte contínuo para garantir o sucesso.</p>
+					</div>
+				</div>
+			</section>
+
+			<div style="text-align: center; margin: 4rem 0; padding: 0 2rem;">
+				<h2 style="color: #334155; margin-bottom: 1rem;">Pronto para Começar?</h2>
+				<p style="color: #64748b; margin-bottom: 2rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+					Entre em contacto connosco para uma consulta gratuita e descubra como podemos 
+					impulsionar o seu negócio digital.
+				</p>
+				<a href="/contacto" style="background: #667eea; color: white; padding: 1.2rem 3rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+					Contactar Agora
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html> 
